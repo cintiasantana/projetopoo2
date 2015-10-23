@@ -1,5 +1,5 @@
 package com.odontoclean.pacientes;
 
-public class IRepositorioPacientes {
+public interface IRepositorioPacientes {
 
 }
