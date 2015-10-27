@@ -1,7 +1,7 @@
-package com.odontoclean.pacientes;
+package com.odontoclean.paciente;
 import com.odontoclean.endereco.Endereco;
 
-public class Pacientes {
+public class Paciente {
 	private Integer codigo;
 	private String nome;
 	private String cpf;
@@ -10,7 +10,7 @@ public class Pacientes {
 	private String dataNascimento;
 	private Endereco endereco;
 	
-	public Pacientes(String nome, String cpf, String telefone, String email, String dataNascimento, Endereco endereco){
+	public Paciente(String nome, String cpf, String telefone, String email, String dataNascimento, Endereco endereco){
 		this.setCodigo(codigo);
 		this.setNome(nome);
 		this.setCpf(cpf);
@@ -19,7 +19,7 @@ public class Pacientes {
 		this.setDataNascimento(dataNascimento);		
 	}
 	
-	public Pacientes(Integer codigo, String nome, String cpf, String telefone, String email, String dataNascimento, Endereco endereco){
+	public Paciente(Integer codigo, String nome, String cpf, String telefone, String email, String dataNascimento, Endereco endereco){
 		this.setCodigo(codigo);
 		this.setNome(nome);
 		this.setCpf(cpf);
