@@ -52,7 +52,7 @@ public class Fachada {
 	}
 	
 	
-	public ArrayList<Paciente> listarCliente() { 
+	public ArrayList<Paciente> listarPaciente() { 
 		return this.controladorPaciente.listar();
 	}
 
