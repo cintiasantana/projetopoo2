@@ -8,7 +8,7 @@ public interface IRepositorioEndereco {
 	public void atualizar(Endereco endereco) throws EnderecoNaoEncontradoException; 
 	public void remover(Integer id) throws EnderecoNaoEncontradoException; 
 	public Endereco procurar(Integer id) throws EnderecoNaoEncontradoException;
-	public Endereco procurarPorCliente(Integer clienteId) throws EnderecoNaoEncontradoException; 
+	public Endereco procurarPorPaciente(Integer pacienteid) throws EnderecoNaoEncontradoException; 
 	public boolean existe(Integer id);
 	public ArrayList<Endereco> listar();
 }

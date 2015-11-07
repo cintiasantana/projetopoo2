@@ -128,13 +128,13 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 	        return resposta;
 	    }
 	    
-		public Endereco procurarPorCliente(Integer clienteId)
+		public Endereco procurarPorPaciente(Integer pacienteid)
 				throws EnderecoNaoEncontradoException {
 			boolean achou = false;
 			Endereco endereco = null;
 	        
 	        for (int i = 0; !achou && (i < indice); i = i + 1) {
-	            if (enderecos[i].getPaciente().getCodigo().equals(clienteId)) {
+	            if (enderecos[i].getPaciente().getCodigo().equals(pacienteid)) {
 	                endereco = enderecos[i];
 	                achou = true; 
 	                break;
