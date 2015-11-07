@@ -25,9 +25,9 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 	        id = 1;
 	    }
 		/**
-		* Método que cadastrar um objeto de classe Cliente no Repositório
+		* Método que cadastrar um objeto de classe Paciente no Repositório
 		*
-		* @param Objeto da Classe Cliente.
+		* @param Objeto da Classe Paciente.
 		* @return void
 		* @throws EnderecoJaCadastradoException  
 		*/
@@ -40,9 +40,9 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 			this.id = this.id + 1; 
 	    }
 		/**
-		* Método que remove um objeto de classe Cliente no Repositório
+		* Método que remove um objeto de classe Paciente no Repositório
 		*
-		* @param Objeto da Classe Cliente.
+		* @param Objeto da Classe Paciente.
 		* @return void
 		* @throws EnderecoNaoEncontradoException 
 		*/
@@ -54,10 +54,10 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 	        enderecos[indice] = null;
 	    }
 		/**
-		* Método que procura um objeto de classe Cliente no Repositório
+		* Método que procura um objeto de classe Paciente no Repositório
 		*
-		* @param CPF Cliente.
-		* @return Cliente
+		* @param CPF Paciente.
+		* @return Paciente
 		* @throws EnderecoNaoEncontradoException 
 		*/
 	    public Endereco procurar(Integer id) throws EnderecoNaoEncontradoException {
@@ -69,10 +69,10 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 	        
 	    }
 		/**
-		* Método que atualiza um objeto de classe Cliente no Repositório
+		* Método que atualiza um objeto de classe Paciente no Repositório
 		*
-		* @param Objeto da Classe Cliente.
-		* @return Cliente
+		* @param Objeto da Classe Paciente.
+		* @return Paciente
 		* @throws EnderecoNaoEncontradoException 
 		*/
 	    public void atualizar(Endereco endereco) throws EnderecoNaoEncontradoException {
@@ -81,9 +81,9 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 	        enderecos[i] = endereco;
 	    }
 		/**
-		* Método que verifica se um objeto de classe Cliente existe no Repositório
+		* Método que verifica se um objeto de classe Paciente existe no Repositório
 		*
-		* @param CPF Cliente.
+		* @param CPF Paciente.
 		* @return Boolean
 		* @throws  
 		*/
@@ -95,10 +95,10 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 	    }
 	    
 		/**
-		* Método que lista objetos de classe Cliente no Repositório
+		* Método que lista objetos de classe Paciente no Repositório
 		*
 		* @param 
-		* @return ArrayList<Cliente>
+		* @return ArrayList<Paciente>
 		* @throws  
 		*/
 	    public ArrayList<Endereco> listar() { 
@@ -112,7 +112,7 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 		/**
 		* Método que retorna um indice valido para o Repositório
 		*
-		* @param CPF do Cliente
+		* @param CPF do Paciente
 		* @return int
 		* @throws  
 		*/
