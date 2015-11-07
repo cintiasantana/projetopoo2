@@ -30,7 +30,7 @@ private IRepositorioEndereco repositorioEndereco;
 	public Endereco procurar(Integer id) throws EnderecoNaoEncontradoException  {
 		return this.repositorioEndereco.procurar(id);
 	}
-	public Endereco procurarPorCliente(Integer clienteId) throws EnderecoNaoEncontradoException  {
+	public Endereco procurarPorPaciente(Integer clienteId) throws EnderecoNaoEncontradoException  {
 		return this.repositorioEndereco.procurarPorCliente(clienteId);
 	}
 	public ArrayList<Endereco> listar() {
