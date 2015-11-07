@@ -21,31 +21,37 @@ public class RepositorioPacienteArrayList implements IRepositorioPaciente{
 
 	@Override
 	public void atualizar(Paciente paciente) throws PacienteNaoEncontradoException {
-		// TODO Auto-generated method stub
+
 		
 	}
 
 	@Override
 	public void remover(String cpf) throws PacienteNaoEncontradoException {
-		// TODO Auto-generated method stub
+	pacientes.remove(cpf);
+	id--;
 		
 	}
 
 	@Override
 	public Paciente procurar(String cpf) throws PacienteNaoEncontradoException {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
 	@Override
 	public boolean existe(String cpf) {
-		// TODO Auto-generated method stub
+	if(cpf.contains(cpf)){
+		return true;
+	}else{
 		return false;
+	}
 	}
 
 	@Override
 	public ArrayList<Paciente> listar() {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < pacientes.size()-1; i++) {
+		 pacientes.get(i).toString();
+		}
 		return pacientes;
 	}
 }
