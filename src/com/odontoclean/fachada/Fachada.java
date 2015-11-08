@@ -9,7 +9,7 @@ import com.odontoclean.paciente.ControladorPaciente;
 import com.odontoclean.paciente.Paciente;
 import com.odontoclean.paciente.PacienteJaCadastradoException;
 import com.odontoclean.paciente.PacienteNaoEncontradoException;
-import com.odontoclean.paciente.util.CampoObritarorioInvalidoException;
+import com.odontoclean.util.CampoObritarorioInvalidoException;
 
 
 

@@ -2,7 +2,7 @@ package com.odontoclean.endereco;
 
 import java.util.ArrayList;
 
-import com.odontoclean.paciente.util.CampoObritarorioInvalidoException;
+import com.odontoclean.util.CampoObritarorioInvalidoException;
 
 
 public class ControladorEndereco {

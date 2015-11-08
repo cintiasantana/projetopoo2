@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 
 
+
 import com.odontoclean.endereco.Endereco;
 import com.odontoclean.endereco.EnderecoJaCadastradoException;
 import com.odontoclean.endereco.EnderecoNaoEncontradoException;
@@ -15,7 +16,7 @@ import com.odontoclean.paciente.CPFInvalidoException;
 import com.odontoclean.paciente.Paciente;
 import com.odontoclean.paciente.PacienteJaCadastradoException;
 import com.odontoclean.paciente.PacienteNaoEncontradoException;
-import com.odontoclean.paciente.util.CampoObritarorioInvalidoException;
+import com.odontoclean.util.CampoObritarorioInvalidoException;
 
 public class TelaCadastroPacientes {
 

@@ -6,8 +6,8 @@ import com.odontoclean.endereco.ControladorEndereco;
 import com.odontoclean.endereco.Endereco;
 import com.odontoclean.endereco.EnderecoJaCadastradoException;
 import com.odontoclean.endereco.EnderecoNaoEncontradoException;
-import com.odontoclean.paciente.util.CampoObritarorioInvalidoException;
-import com.odontoclean.paciente.util.ValidarCPF;
+import com.odontoclean.util.CampoObritarorioInvalidoException;
+import com.odontoclean.util.ValidarCPF;
 
 
 public class ControladorPaciente {

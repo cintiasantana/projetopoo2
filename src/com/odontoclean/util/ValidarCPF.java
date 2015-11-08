@@ -1,4 +1,4 @@
-package com.odontoclean.paciente.util;
+package com.odontoclean.util;
 
 public class ValidarCPF {
 	public static boolean validaCPF(String strCpf){
