@@ -10,7 +10,7 @@ public class Endereco {
 	private String uf;
 	private Paciente paciente;
 	
-	public Endereco(String rua, String numero, String bairro, String cidade, String uf, Paciente paciente){
+	public Endereco(Paciente paciente, String rua, String numero, String bairro, String cidade, String uf){
 		this.id = 0;
 		this.setRua(rua);
 		this.setNumero(numero);
@@ -20,14 +20,13 @@ public class Endereco {
 		this.setPaciente(paciente);
 	}
 	
-	public Endereco(Integer id, String rua, String numero, String bairro, String cidade, String uf, Paciente paciente){
+	public Endereco(Integer id, String rua, String numero, String bairro, String cidade, String uf){
 		this.setId(id);
 		this.setRua(rua);
 		this.setNumero(numero);
 		this.setBairro(bairro);
 		this.setCidade(cidade);
 		this.setUf(uf);
-		this.setPaciente(paciente);
 	}
 	
 	public Integer getId(){
@@ -88,7 +87,7 @@ public class Endereco {
 	
 	@Override
 	public String toString(){
-		return "Endereco [id=" + id + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cidade=" + cidade + ", uf=" + uf + "]";
+		return "[id=" + id + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cidade=" + cidade + ", uf=" + uf + "]";
 	
 	}
 }
