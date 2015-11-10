@@ -88,6 +88,6 @@ public class Paciente {
     	this.endereco = endereco;
     }
     public String toString(){
-    	return "Código: "+codigo;
+    	return "Código: "+codigo+"\nNome: "+nome+"\nCPF: "+cpf+"\nTelefone: "+telefone+"\nE-mail: "+email+"\nData Nascimento: "+dataNascimento+"\nEndereço: "+endereco;
     }
 }
