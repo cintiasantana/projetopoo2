@@ -10,8 +10,7 @@ public class Paciente {
 	private String dataNascimento;
 	private Endereco endereco;
 	
-	public Paciente(String nome, String cpf, String telefone, String email, String dataNascimento, Endereco endereco){
-		this.setCodigo(codigo);
+	public Paciente(String nome, String cpf, String telefone, String email, String dataNascimento){
 		this.setNome(nome);
 		this.setCpf(cpf);
 		this.setTelefone(telefone);
@@ -19,7 +18,7 @@ public class Paciente {
 		this.setDataNascimento(dataNascimento);		
 	}
 	
-	public Paciente(Integer codigo, String nome, String cpf, String telefone, String email, String dataNascimento, Endereco endereco){
+	public Paciente(Integer codigo, String nome, String cpf, String telefone, String email, String dataNascimento){
 		this.setCodigo(codigo);
 		this.setNome(nome);
 		this.setCpf(cpf);

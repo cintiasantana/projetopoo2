@@ -10,7 +10,7 @@ public class Endereco {
 	private String uf;
 	private Paciente paciente;
 	
-	public Endereco(String rua, String numero, String bairro, String cidade, String uf, Paciente paciente){
+	public Endereco( Paciente paciente, String rua, String numero, String bairro, String cidade, String uf){
 		this.id = 0;
 		this.setRua(rua);
 		this.setNumero(numero);
