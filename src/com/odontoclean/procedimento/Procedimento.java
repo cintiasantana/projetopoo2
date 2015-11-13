@@ -39,4 +39,7 @@ public class Procedimento {
 	public void setValor(double valor){
 		this.valor = valor;
 	}
+	public String toString(){
+		return "Código: "+codigo+"\nProcedimento: "+procedimento+"\nValor: "+valor;
+	}
 }
