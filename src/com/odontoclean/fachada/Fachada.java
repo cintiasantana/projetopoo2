@@ -72,23 +72,25 @@ public class Fachada implements IRepositorioDentista, IRepositorioEndereco {
 
 
 	@Override
-	public void cadastrar(Dentista dentista)throws DentistaJaCadastradoException {
+	public void cadastrar(Dentista dentista)throws DentistaJaCadastradoException, IllegalArgumentException, CPFInvalidoException, CampoObritarorioInvalidoException, EnderecoJaCadastradoException {
 		// TODO Auto-generated method stub
+		this.controladorDentista.cadastrar(dentista);
 	
 	}
 
 
 	@Override
-	public void atualizar(Dentista dentista)
-			throws DentistaNaoEncontradoException {
+	public void atualizar(Dentista dentista)throws DentistaNaoEncontradoException, CPFInvalidoException, CampoObritarorioInvalidoException, EnderecoNaoEncontradoException {
 		// TODO Auto-generated method stub
+		this.controladorDentista.atualizar(dentista);
 		
 	}
 
 
 	@Override
-	public void remover(String cpf) throws DentistaNaoEncontradoException {
+	public void remover(String cpf) throws DentistaNaoEncontradoException, CPFInvalidoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException {
 		// TODO Auto-generated method stub
+		this.controladorDentista.remover(cpf);
 		
 	}
 

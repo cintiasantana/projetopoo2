@@ -52,6 +52,6 @@ public boolean existe(String cpf) {
 @Override
 public ArrayList<Dentista> listar() {
 	// TODO Auto-generated method stub
-	return dentista;
+	return ;
 }
 }
