@@ -1,6 +1,7 @@
 package com.odontoclean.dentista;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.odontoclean.endereco.EnderecoJaCadastradoException;
 import com.odontoclean.endereco.EnderecoNaoEncontradoException;
@@ -13,5 +14,5 @@ public interface IRepositorioDentista {
 	public void remover(String cpf) throws DentistaNaoEncontradoException, CPFInvalidoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException;
 	public Dentista procurar(String cpf) throws DentistaNaoEncontradoException;
 	public boolean existe(String cpf);
-	public ArrayList<Dentista> listar();
+	public List<Dentista> listar();
 }

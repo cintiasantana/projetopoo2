@@ -1,6 +1,7 @@
 package com.odontoclean.fachada;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.odontoclean.dentista.ControladorDentista;
 import com.odontoclean.dentista.Dentista;
@@ -22,6 +23,7 @@ import com.odontoclean.util.CampoObritarorioInvalidoException;
 
 
 public class Fachada implements IRepositorioDentista, IRepositorioEndereco {
+	
 	private static Fachada instance;
 	
 	private ControladorPaciente controladorPaciente;
@@ -95,10 +97,9 @@ public class Fachada implements IRepositorioDentista, IRepositorioEndereco {
 	}
 
 
-	@Override
-	public Dentista procurar(String cpf) throws DentistaNaoEncontradoException {
+	public Dentista procurar(Dentista dentista) throws DentistaNaoEncontradoException {
 		// TODO Auto-generated method stub
-		return null;
+		return this.controladorDentista.procurar(dentista);
 	}
 
 
@@ -110,47 +111,43 @@ public class Fachada implements IRepositorioDentista, IRepositorioEndereco {
 
 
 	@Override
-	public ArrayList<Dentista> listar() {
+	public List<Dentista> listar() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.controladorDentista.listar();
 	}
 
 
 	@Override
-	public void cadastrar(Endereco endereco)
-			throws EnderecoJaCadastradoException {
+	public void cadastrar(Endereco endereco)throws EnderecoJaCadastradoException, CampoObritarorioInvalidoException {
 		// TODO Auto-generated method stub
+		this.controladorEndereco.cadastrar(endereco);
 		
 	}
 
 
 	@Override
-	public void atualizar(Endereco endereco)
-			throws EnderecoNaoEncontradoException {
-		// TODO Auto-generated method stub
-		
+	public void atualizar(Endereco endereco)throws EnderecoNaoEncontradoException, CampoObritarorioInvalidoException {
+		this.controladorEndereco.atualizar(endereco);
 	}
 
 
 	@Override
 	public void remover(Integer id) throws EnderecoNaoEncontradoException {
-		// TODO Auto-generated method stub
-		
+		this.controladorEndereco.remover(id);
 	}
 
 
 	@Override
 	public Endereco procurar(Integer id) throws EnderecoNaoEncontradoException {
 		// TODO Auto-generated method stub
-		return null;
+		return this.controladorEndereco.procurar(id);
 	}
 
 
 	@Override
-	public Endereco procurarPorPaciente(Integer pacienteId)
-			throws EnderecoNaoEncontradoException {
+	public Endereco procurarPorPaciente(Integer pacienteId)throws EnderecoNaoEncontradoException {
 		// TODO Auto-generated method stub
-		return null;
+		return this.controladorEndereco.procurarPorPaciente(pacienteId);
 	}
 
 
@@ -158,5 +155,19 @@ public class Fachada implements IRepositorioDentista, IRepositorioEndereco {
 	public boolean existe(Integer id) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+	@Override
+	public ArrayList<Endereco> listar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Dentista procurar(String cpf) throws DentistaNaoEncontradoException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

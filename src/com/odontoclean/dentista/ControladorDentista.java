@@ -1,6 +1,7 @@
 package com.odontoclean.dentista;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.odontoclean.endereco.ControladorEndereco;
 import com.odontoclean.endereco.Endereco;
@@ -72,11 +73,11 @@ public class ControladorDentista {
 		dentista.setEndereco(endereco);
 		return dentista;
 	}
-	public ArrayList<Dentista> listar() {
-		ArrayList<Dentista> dentistas = null;
+	public List<Dentista> listar() {
+		List<Dentista> dentistas = null;
 		Endereco endereco = null;
 		
-		dentistas =  this.repositorioDentista.listar();
+		dentistas = this.repositorioDentista.listar();
 		for(Dentista dentista : dentistas) {
 			try {
 				endereco = controladorEndereco.procurarPorPaciente(dentista.getCodigo());
