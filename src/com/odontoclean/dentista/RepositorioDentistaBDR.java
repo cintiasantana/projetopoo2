@@ -5,39 +5,39 @@ import java.util.ArrayList;
 public class RepositorioDentistaBDR implements IRepositorioDentista{
 
 	@Override
-	public void cadastrar(Dentista dentista)
+	public void cadastrarDentista(Dentista dentista)
 			throws DentistaJaCadastradoException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void atualizar(Dentista dentista)
+	public void atualizarDentista(Dentista dentista)
 			throws DentistaNaoEncontradoException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void remover(String cpf) throws DentistaNaoEncontradoException {
+	public void removerDentista(String cpf) throws DentistaNaoEncontradoException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Dentista procurar(String cpf) throws DentistaNaoEncontradoException {
+	public Dentista procurarDentista(String cpf) throws DentistaNaoEncontradoException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean existe(String cpf) {
+	public boolean dentistaExiste(String cpf) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public ArrayList<Dentista> listar() {
+	public ArrayList<Dentista> listarDentista() {
 		// TODO Auto-generated method stub
 		return null;
 	}

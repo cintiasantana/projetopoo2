@@ -9,10 +9,10 @@ import com.odontoclean.paciente.CPFInvalidoException;
 import com.odontoclean.util.CampoObritarorioInvalidoException;
 
 public interface IRepositorioDentista {
-	public void cadastrar(Dentista dentista) throws DentistaJaCadastradoException, IllegalArgumentException, CPFInvalidoException, CampoObritarorioInvalidoException, EnderecoJaCadastradoException;
-	public void atualizar(Dentista dentista) throws DentistaNaoEncontradoException, CPFInvalidoException, CampoObritarorioInvalidoException, EnderecoNaoEncontradoException;
-	public void remover(String cpf) throws DentistaNaoEncontradoException, CPFInvalidoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException;
-	public Dentista procurar(String cpf) throws DentistaNaoEncontradoException;
-	public boolean existe(String cpf);
-	public List<Dentista> listar();
+	public void cadastrarDentista(Dentista dentista) throws DentistaJaCadastradoException, IllegalArgumentException, CPFInvalidoException, CampoObritarorioInvalidoException, EnderecoJaCadastradoException;
+	public void atualizarDentista(Dentista dentista) throws DentistaNaoEncontradoException, CPFInvalidoException, CampoObritarorioInvalidoException, EnderecoNaoEncontradoException;
+	public void removerDentista(String cpf) throws DentistaNaoEncontradoException, CPFInvalidoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException;
+	public Dentista procurarDentista(String cpf) throws DentistaNaoEncontradoException;
+	public boolean dentistaExiste(String cpf);
+	public List<Dentista> listarDentista();
 }

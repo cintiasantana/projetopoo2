@@ -2,6 +2,8 @@ package com.odontoclean.endereco;
 
 import java.util.ArrayList;
 
+import com.odontoclean.util.CampoObritarorioInvalidoException;
+
 
 public class RepositorioEnderecoArray implements IRepositorioEndereco {
 	 private Endereco[] enderecos;
@@ -29,9 +31,9 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 		* @return void
 		* @throws EnderecoJaCadastradoException  
 		*/
-	    public void cadastrar(Endereco endereco) throws EnderecoJaCadastradoException {
+	    public void cadastrarEnderco(Endereco endereco) throws EnderecoJaCadastradoException {
 	    	// Verifica se o Paciente existe no repositório
-	    	if (this.existe(endereco.getId())) throw new EnderecoJaCadastradoException();
+	    	if (this.enderecoExiste(endereco.getId())) throw new EnderecoJaCadastradoException();
 	    	endereco.setId(this.id);
 	    	enderecos[this.indice] = endereco;
 			this.indice = this.indice + 1;
@@ -44,7 +46,7 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 		* @return void
 		* @throws EnderecoNaoEncontradoException 
 		*/
-	    public void remover(Integer id) throws EnderecoNaoEncontradoException {
+	    public void removerEndereco(Integer id) throws EnderecoNaoEncontradoException {
 	        int i = getIndice(id);
 	        if (i == -1) throw new EnderecoNaoEncontradoException();
 	        enderecos[i] = enderecos[indice-1];
@@ -58,7 +60,7 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 		* @return Paciente
 		* @throws EnderecoNaoEncontradoException 
 		*/
-	    public Endereco procurar(Integer id) throws EnderecoNaoEncontradoException {
+	    public Endereco procurarEndereco(Integer id) throws EnderecoNaoEncontradoException {
 	    	Endereco endereco = null;
 	        int i = getIndice(id);
 	        if (i == -1) throw new EnderecoNaoEncontradoException();
@@ -73,7 +75,7 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 		* @return Paciente
 		* @throws EnderecoNaoEncontradoException 
 		*/
-	    public void atualizar(Endereco endereco) throws EnderecoNaoEncontradoException {
+	    public void atualizarEndereco(Endereco endereco) throws EnderecoNaoEncontradoException {
 	        int i = getIndice(endereco.getId());
 	        if (i == -1) throw new EnderecoNaoEncontradoException();
 	        enderecos[i] = endereco;
@@ -85,7 +87,7 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 		* @return Boolean
 		* @throws  
 		*/
-	    public boolean existe(Integer id) {
+	    public boolean enderecoExiste(Integer id) {
 	        boolean resposta;
 	            if (getIndice(id) >= 0) resposta = true;
 	            else resposta = false;
@@ -99,7 +101,7 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 		* @return ArrayList<Paciente>
 		* @throws  
 		*/
-	    public ArrayList<Endereco> listar() { 
+	    public ArrayList<Endereco> listarEndereco() { 
 	    	ArrayList<Endereco> lista = new ArrayList<Endereco>();
 	    	for (int i = 0; i < indice; i = i + 1) {
 	            lista.add(enderecos[i]);
@@ -139,5 +141,11 @@ public class RepositorioEnderecoArray implements IRepositorioEndereco {
 	            }
 	        }
 	        return endereco;
+		}
+		@Override
+		public void cadastrarEndereco(Endereco endereco)throws EnderecoJaCadastradoException,
+				CampoObritarorioInvalidoException {
+			// TODO Auto-generated method stub
+			
 		}
 }

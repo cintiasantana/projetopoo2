@@ -24,10 +24,10 @@ public class RepositorioDentistaArray implements IRepositorioDentista{
         id = 1;
     }
 	
-    public void cadastrar(Dentista dentista) throws DentistaJaCadastradoException {
+    public void cadastrarDentista(Dentista dentista) throws DentistaJaCadastradoException {
     	
     	
-    	if (this.existe(dentista.getCpf())) throw new DentistaJaCadastradoException();
+    	if (this.dentistaExiste(dentista.getCpf())) throw new DentistaJaCadastradoException();
 		
     	dentista.setCodigo(this.id);
 		dentistas[this.indice] = dentista;
@@ -35,7 +35,7 @@ public class RepositorioDentistaArray implements IRepositorioDentista{
 		this.id = this.id + 1; 
     }
 	
-    public void remover(String cpf) throws DentistaNaoEncontradoException {
+    public void removerDentista(String cpf) throws DentistaNaoEncontradoException {
         int i = getIndice(cpf);
         if (i == -1) throw new DentistaNaoEncontradoException();
         dentistas[i] = dentistas[indice-1];
@@ -43,7 +43,7 @@ public class RepositorioDentistaArray implements IRepositorioDentista{
         dentistas[indice] = null;
     }
 	
-    public Dentista procurar(String cpf) throws DentistaNaoEncontradoException {
+    public Dentista procurarDentista(String cpf) throws DentistaNaoEncontradoException {
     	Dentista dentista = null;
         int i = getIndice(cpf);
         if (i == -1) throw new DentistaNaoEncontradoException();
@@ -52,13 +52,13 @@ public class RepositorioDentistaArray implements IRepositorioDentista{
         
     }
 	
-    public void atualizar(Dentista dentista) throws DentistaNaoEncontradoException {
+    public void atualizarDentista(Dentista dentista) throws DentistaNaoEncontradoException {
         int i = getIndice(dentista.getCpf());
         if (i == -1) throw new DentistaNaoEncontradoException();
         dentistas[i] = dentista;
     }
 	
-    public boolean existe(String cpf) {
+    public boolean dentistaExiste(String cpf) {
         boolean resposta;
             if (getIndice(cpf) >= 0) resposta = true;
             else resposta = false;
@@ -66,7 +66,7 @@ public class RepositorioDentistaArray implements IRepositorioDentista{
     }
     
 	
-    public ArrayList<Dentista> listar() { 
+    public ArrayList<Dentista> listarDentista() { 
     	ArrayList<Dentista> lista = new ArrayList<Dentista>();
     	for (int i = 0; i < indice; i = i + 1) {
             lista.add(dentistas[i]);

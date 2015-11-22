@@ -1,6 +1,7 @@
 package com.odontoclean.paciente;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class RepositorioPacienteArrayList implements IRepositorioPaciente {
@@ -13,7 +14,7 @@ public class RepositorioPacienteArrayList implements IRepositorioPaciente {
 		id = 1;
 	}
 	@Override
-	public void cadastrar(Paciente paciente) throws PacienteJaCadastradoException {
+	public void cadastrarPaciente(Paciente paciente) throws PacienteJaCadastradoException {
 		paciente.setCodigo(id);
 		pacientes.add(paciente);
 		id++;
@@ -21,31 +22,31 @@ public class RepositorioPacienteArrayList implements IRepositorioPaciente {
 	}
 
 	@Override
-	public void atualizar(Paciente paciente) throws PacienteNaoEncontradoException {
+	public void atualizarPaciente(Paciente paciente) throws PacienteNaoEncontradoException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void remover(String cpf) throws PacienteNaoEncontradoException {
+	public void removerPaciente(String cpf) throws PacienteNaoEncontradoException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Paciente procurar(String cpf) throws PacienteNaoEncontradoException {
+	public Paciente procurarPaciente(String cpf) throws PacienteNaoEncontradoException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean existe(String cpf) {
+	public boolean pacienteExiste(String cpf) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public ArrayList<Paciente> listar() {
+	public List<Paciente> listarPaciente() {
 		// TODO Auto-generated method stub
 		return pacientes;
 	}

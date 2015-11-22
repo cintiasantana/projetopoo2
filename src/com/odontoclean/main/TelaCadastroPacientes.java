@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 
+
 import com.odontoclean.endereco.Endereco;
 import com.odontoclean.endereco.EnderecoJaCadastradoException;
 import com.odontoclean.endereco.EnderecoNaoEncontradoException;
@@ -14,6 +15,7 @@ import com.odontoclean.paciente.Paciente;
 import com.odontoclean.paciente.PacienteJaCadastradoException;
 import com.odontoclean.paciente.PacienteNaoEncontradoException;
 import com.odontoclean.util.CampoObritarorioInvalidoException;
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 
 

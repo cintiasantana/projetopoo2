@@ -1,6 +1,7 @@
 package com.odontoclean.paciente;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.odontoclean.endereco.ControladorEndereco;
 import com.odontoclean.endereco.Endereco;
@@ -19,7 +20,7 @@ public class ControladorPaciente {
 		this.repositorioPaciente = new RepositorioPacienteArray();
 		this.controladorEndereco = new ControladorEndereco();
 	}
-	public void cadastrar(Paciente paciente) throws IllegalArgumentException, 
+	public void cadastrarPaciente(Paciente paciente) throws IllegalArgumentException, 
 												  CPFInvalidoException, 
 												  PacienteJaCadastradoException, 
 												  CampoObritarorioInvalidoException, 
@@ -30,9 +31,9 @@ public class ControladorPaciente {
 	    if (paciente.getNome().equals("")) throw new CampoObritarorioInvalidoException("Nome");
 	    
 	    // Cadastrando Paciente
-	    this.repositorioPaciente.cadastrar(paciente);
+	    this.repositorioPaciente.cadastrarPaciente(paciente);
 	    // Cadastrando Endereco
-	    controladorEndereco.cadastrar(paciente.getEndereco());
+	    controladorEndereco.cadastrarEndereco(paciente.getEndereco());
 	}
 	public void atualizar(Paciente paciente) throws CPFInvalidoException, 
 												  CampoObritarorioInvalidoException, 
@@ -42,7 +43,7 @@ public class ControladorPaciente {
 		if (!ValidarCPF.validaCPF(paciente.getCpf())) throw new CPFInvalidoException(paciente.getCpf());
 		if (paciente.getNome() == "") 			throw new CampoObritarorioInvalidoException("Nome é nulo ou Inválido.");
 		
-		this.repositorioPaciente.atualizar(paciente);
+		this.repositorioPaciente.atualizarPaciente(paciente);
 		controladorEndereco.atualizar(paciente.getEndereco());
 	}
 	public void remover(String cpf) throws CPFInvalidoException, PacienteNaoEncontradoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException {
@@ -52,8 +53,8 @@ public class ControladorPaciente {
 		// Validações da Classe Paciente
 		if (!ValidarCPF.validaCPF(cpf)) throw new CPFInvalidoException(cpf);
 		paciente = this.procurar(cpf);
-		controladorEndereco.remover(paciente.getEndereco().getId());
-		this.repositorioPaciente.remover(cpf);
+		controladorEndereco.removerEndereco(paciente.getEndereco().getId());
+		this.repositorioPaciente.removerPaciente(cpf);
 	}
 	public Paciente procurar(String cpf) throws CPFInvalidoException, PacienteNaoEncontradoException, EnderecoNaoEncontradoException {
 		Paciente paciente = null;
@@ -63,16 +64,16 @@ public class ControladorPaciente {
 		// Validações da Classe Paciente
 		if (!ValidarCPF.validaCPF(cpf)) throw new CPFInvalidoException(cpf);
 		
-		paciente = this.repositorioPaciente.procurar(cpf);
+		paciente = this.repositorioPaciente.procurarPaciente(cpf);
 		endereco = controladorEndereco.procurarPorPaciente(paciente.getEndereco().getId());
 		paciente.setEndereco(endereco);
 		return paciente;
 	}
-	public ArrayList<Paciente> listar() {
-		ArrayList<Paciente> pacientes = null;
+	public List<Paciente> listarPaciente() {
+		List<Paciente> pacientes = null;
 		Endereco endereco = null;
 		
-		pacientes =  this.repositorioPaciente.listar();
+		pacientes =  this.repositorioPaciente.listarPaciente();
 		for(Paciente paciente: pacientes) {
 			try {
 				endereco = controladorEndereco.procurarPorPaciente(paciente.getCodigo());

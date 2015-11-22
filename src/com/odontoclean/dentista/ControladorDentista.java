@@ -24,7 +24,7 @@ public class ControladorDentista {
 		this.repositorioDentista = new RepositorioDentistaArray();
 		this.controladorEndereco = new ControladorEndereco();
 	}
-	public void cadastrar(Dentista dentista) throws IllegalArgumentException, 
+	public void cadastrarDentista(Dentista dentista) throws IllegalArgumentException, 
 												  CPFInvalidoException, 
 												  DentistaJaCadastradoException, 
 												  CampoObritarorioInvalidoException, 
@@ -35,11 +35,11 @@ public class ControladorDentista {
 	    if (dentista.getNome().equals("")) throw new CampoObritarorioInvalidoException("Nome");
 	    
 	    // Cadastrando Paciente
-	    this.repositorioDentista.cadastrar(dentista);
+	    this.repositorioDentista.cadastrarDentista(dentista);
 	    // Cadastrando Endereco
-	    controladorEndereco.cadastrar(dentista.getEndereco());
+	    controladorEndereco.cadastrarEndereco(dentista.getEndereco());
 	}
-	public void atualizar(Dentista dentista) throws CPFInvalidoException, 
+	public void atualizarDentista(Dentista dentista) throws CPFInvalidoException, 
 												  CampoObritarorioInvalidoException, 
 												  DentistaNaoEncontradoException, 
 												  EnderecoNaoEncontradoException {
@@ -47,18 +47,18 @@ public class ControladorDentista {
 		if (!ValidarCPF.validaCPF(dentista.getCpf())) throw new CPFInvalidoException(dentista.getCpf());
 		if (dentista.getNome() == "") 			throw new CampoObritarorioInvalidoException("Nome é nulo ou Inválido.");
 		
-		this.repositorioDentista.atualizar(dentista);
+		this.repositorioDentista.atualizarDentista(dentista);
 		controladorEndereco.atualizar(dentista.getEndereco());
 	}
-	public void remover(String cpf) throws CPFInvalidoException, DentistaNaoEncontradoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException {
+	public void removerDentista(String cpf) throws CPFInvalidoException, DentistaNaoEncontradoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException {
 		Dentista dentista = null;
 		// Limpando a formatação do CPF;
 		cpf = cpf.replaceAll("\\.|\\-|\\ ", "");
 		// Validações da Classe Paciente
 		if (!ValidarCPF.validaCPF(cpf)) throw new CPFInvalidoException(cpf);
 		dentista = this.procurar(cpf);
-		controladorEndereco.remover(dentista.getEndereco().getId());
-		this.repositorioDentista.remover(cpf);
+		controladorEndereco.removerEndereco(dentista.getEndereco().getId());
+		this.repositorioDentista.removerDentista(cpf);
 	}
 	public Dentista procurar(String cpf) throws CPFInvalidoException, DentistaNaoEncontradoException, EnderecoNaoEncontradoException {
 		Dentista dentista = null;
@@ -68,7 +68,7 @@ public class ControladorDentista {
 		// Validações da Classe Paciente
 		if (!ValidarCPF.validaCPF(cpf)) throw new CPFInvalidoException(cpf);
 		
-		dentista = this.repositorioDentista.procurar(cpf);
+		dentista = this.repositorioDentista.procurarDentista(cpf);
 		endereco = controladorEndereco.procurarPorPaciente(dentista.getEndereco().getId());
 		dentista.setEndereco(endereco);
 		return dentista;
@@ -77,7 +77,7 @@ public class ControladorDentista {
 		List<Dentista> dentistas = null;
 		Endereco endereco = null;
 		
-		dentistas = this.repositorioDentista.listar();
+		dentistas = this.repositorioDentista.listarDentista();
 		for(Dentista dentista : dentistas) {
 			try {
 				endereco = controladorEndereco.procurarPorPaciente(dentista.getCodigo());
