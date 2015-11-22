@@ -1,22 +1,25 @@
 package com.odontoclean.dentista;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.odontoclean.fachada.Fachada;
 
 
-public class RepositorioDentistaArrayList implements IRepositorioDentista{
 
-private ArrayList<Dentista> dentistas;
+public class RepositorioDentistaList implements IRepositorioDentista, Serializable{
+
+private ArrayList<Dentista> repositorio;
 private int id;
 
-public RepositorioDentistaArrayList() {
-	dentistas = new ArrayList<Dentista>();
+public RepositorioDentistaList() {
+	repositorio = new ArrayList<Dentista>();
 	id = 1;
 }
 @Override
 public void cadastrar(Dentista dentista) throws DentistaJaCadastradoException {
 	dentista.setCodigo(id);
-	dentistas.add(dentista);
+	repositorio.add(dentista);
 	id++;
 	
 }
@@ -24,6 +27,9 @@ public void cadastrar(Dentista dentista) throws DentistaJaCadastradoException {
 @Override
 public void atualizar(Dentista dentista ) throws DentistaNaoEncontradoException {
 	// TODO Auto-generated method stub
+	try{
+		Fachada.getInstance().atualizarDentista()
+	}
 	
 }
 
