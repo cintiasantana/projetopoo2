@@ -27,9 +27,7 @@ public void cadastrar(Dentista dentista) throws DentistaJaCadastradoException {
 @Override
 public void atualizar(Dentista dentista ) throws DentistaNaoEncontradoException {
 	// TODO Auto-generated method stub
-	try{
-		Fachada.getInstance().atualizarDentista()
-	}
+	
 	
 }
 
@@ -54,6 +52,6 @@ public boolean existe(String cpf) {
 @Override
 public ArrayList<Dentista> listar() {
 	// TODO Auto-generated method stub
-	return dentistas;
+	return dentista;
 }
 }
