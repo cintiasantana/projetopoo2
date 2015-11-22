@@ -12,7 +12,7 @@ private IRepositorioEndereco repositorioEndereco;
 	public ControladorEndereco() {
 		this.repositorioEndereco = new RepositorioEnderecoArray();
 	}
-	public void cadastrarEndereco(Endereco endereco) throws EnderecoJaCadastradoException, 
+	public void cadastrar(Endereco endereco) throws EnderecoJaCadastradoException, 
 													CampoObritarorioInvalidoException  {
 		if (endereco == null) throw new IllegalArgumentException("Endereco Inválido.");
 	    if (endereco.getRua().equals("")) throw new CampoObritarorioInvalidoException("Rua");
@@ -25,16 +25,16 @@ private IRepositorioEndereco repositorioEndereco;
 	    if (endereco.getRua().equals("")) throw new CampoObritarorioInvalidoException("Rua");
 		this.repositorioEndereco.atualizarEndereco(endereco);
 	}
-	public void removerEndereco(Integer id) throws EnderecoNaoEncontradoException {
+	public void remover(Integer id) throws EnderecoNaoEncontradoException {
 		this.repositorioEndereco.removerEndereco(id);
 	}
-	public Endereco procurarEndereco(Integer id) throws EnderecoNaoEncontradoException  {
+	public Endereco procurar(Integer id) throws EnderecoNaoEncontradoException  {
 		return this.repositorioEndereco.procurarEndereco(id);
 	}
 	public Endereco procurarPorPaciente(Integer pacienteId) throws EnderecoNaoEncontradoException  {
 		return this.repositorioEndereco.procurarPorPaciente(pacienteId);
 	}
-	public List<Endereco> listarEndereco() {
+	public List<Endereco> listar() {
 		return this.repositorioEndereco.listarEndereco();
 	}
 }

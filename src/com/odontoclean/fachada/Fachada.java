@@ -23,7 +23,7 @@ import com.odontoclean.util.CampoObritarorioInvalidoException;
 
 
 
-public class Fachada implements IRepositorioDentista, IRepositorioEndereco, IRepositorioPaciente{
+public class Fachada {
 	
 	private static Fachada instance;
 	
@@ -48,155 +48,118 @@ public class Fachada implements IRepositorioDentista, IRepositorioEndereco, IRep
 	}
 
 
-	@Override
-	public void cadastrarEndereco(Endereco endereco)
-			throws EnderecoJaCadastradoException,
-			CampoObritarorioInvalidoException {
-		// TODO Auto-generated method stub
+	public void cadastrarEndereco(Endereco endereco)throws EnderecoJaCadastradoException,CampoObritarorioInvalidoException {
+		this.controladorEndereco.cadastrar(endereco);
 		
 	}
 
 
-	@Override
-	public void atualizarEndereco(Endereco endereco)
-			throws EnderecoNaoEncontradoException,
-			CampoObritarorioInvalidoException {
-		// TODO Auto-generated method stub
+	public void atualizarEndereco(Endereco endereco)throws EnderecoNaoEncontradoException,CampoObritarorioInvalidoException {
+		this.controladorEndereco.atualizar(endereco);
 		
 	}
 
 
-	@Override
-	public void removerEndereco(Integer id)
-			throws EnderecoNaoEncontradoException {
-		// TODO Auto-generated method stub
+	public void removerEndereco(Integer id)throws EnderecoNaoEncontradoException {
+		this.controladorEndereco.remover(id);
 		
 	}
 
 
-	@Override
-	public Endereco procurarEndereco(Integer id)
-			throws EnderecoNaoEncontradoException {
-		// TODO Auto-generated method stub
-		return null;
+	public Endereco procurarEndereco(Integer id)throws EnderecoNaoEncontradoException {
+		
+		return this.controladorEndereco.procurar(id);
 	}
 
 
-	@Override
-	public Endereco procurarPorPaciente(Integer pacienteId)
-			throws EnderecoNaoEncontradoException {
+	public Endereco procurarPorPaciente(Integer pacienteId)throws EnderecoNaoEncontradoException {
 		// TODO Auto-generated method stub
-		return null;
+		return this.controladorEndereco.procurarPorPaciente(pacienteId);
 	}
 
 
-	@Override
 	public boolean enderecoExiste(Integer id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 
-	@Override
 	public List<Endereco> listarEndereco() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.controladorEndereco.listar();
 	}
 
 
-	@Override
-	public void cadastrarDentista(Dentista dentista)
-			throws DentistaJaCadastradoException, IllegalArgumentException,
-			CPFInvalidoException, CampoObritarorioInvalidoException,
-			EnderecoJaCadastradoException {
+	public void cadastrarDentista(Dentista dentista)throws DentistaJaCadastradoException, IllegalArgumentException,CPFInvalidoException, CampoObritarorioInvalidoException,EnderecoJaCadastradoException {
 		// TODO Auto-generated method stub
+		this.controladorDentista.cadastrar(dentista);
 		
 	}
 
 
-	@Override
-	public void atualizarDentista(Dentista dentista)
-			throws DentistaNaoEncontradoException, CPFInvalidoException,
-			CampoObritarorioInvalidoException, EnderecoNaoEncontradoException {
-		// TODO Auto-generated method stub
+	public void atualizarDentista(Dentista dentista)throws DentistaNaoEncontradoException, CPFInvalidoException,CampoObritarorioInvalidoException, EnderecoNaoEncontradoException {
+		this.controladorDentista.atualizar(dentista);
 		
 	}
 
 
-	@Override
-	public void removerDentista(String cpf)
-			throws DentistaNaoEncontradoException, CPFInvalidoException,
-			EnderecoNaoEncontradoException, CampoObritarorioInvalidoException {
-		// TODO Auto-generated method stub
+	public void removerDentista(String cpf)throws DentistaNaoEncontradoException, CPFInvalidoException,EnderecoNaoEncontradoException, CampoObritarorioInvalidoException {
+		this.controladorDentista.remover(cpf);
 		
 	}
 
 
-	@Override
-	public Dentista procurarDentista(String cpf)
-			throws DentistaNaoEncontradoException {
+	public Dentista procurarDentista(String cpf)throws DentistaNaoEncontradoException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
-	@Override
 	public boolean dentistaExiste(String cpf) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 
-	@Override
 	public ArrayList<Dentista> listarDentista() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.controladorDentista.listar();
 	}
 
 
-	@Override
-	public void cadastrarPaciente(Paciente paciente)
-			throws PacienteJaCadastradoException {
-		// TODO Auto-generated method stub
+	public void cadastrarPaciente(Paciente paciente)throws PacienteJaCadastradoException, IllegalArgumentException, CPFInvalidoException, CampoObritarorioInvalidoException, EnderecoJaCadastradoException {
+		this.controladorPaciente.cadastrar(paciente);
 		
 	}
 
 
-	@Override
-	public void atualizarPaciente(Paciente paciente)
-			throws PacienteNaoEncontradoException {
-		// TODO Auto-generated method stub
+	public void atualizarPaciente(Paciente paciente)throws PacienteNaoEncontradoException, CPFInvalidoException, CampoObritarorioInvalidoException, EnderecoNaoEncontradoException {
+		this.controladorPaciente.atualizar(paciente);
 		
 	}
 
 
-	@Override
-	public void removerPaciente(String cpf)
-			throws PacienteNaoEncontradoException {
-		// TODO Auto-generated method stub
+	public void removerPaciente(String cpf)throws PacienteNaoEncontradoException, CPFInvalidoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException {
+		this.controladorPaciente.remover(cpf);
 		
 	}
 
 
-	@Override
-	public Paciente procurarPaciente(String cpf)
-			throws PacienteNaoEncontradoException {
+	public Paciente procurarPaciente(String cpf)throws PacienteNaoEncontradoException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
-	@Override
 	public boolean pacienteExiste(String cpf) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 
-	@Override
 	public ArrayList<Paciente> listarPaciente() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.controladorPaciente.listar();
 	}
 	
 }

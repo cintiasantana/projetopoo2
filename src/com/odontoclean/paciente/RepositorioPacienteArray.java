@@ -33,9 +33,9 @@ public class RepositorioPacienteArray implements IRepositorioPaciente{
 		* @return void
 		* @throws PacienteJaCadastradoException  
 		*/
-	    public void cadastrarPaciente(Paciente paciente) throws PacienteJaCadastradoException {
+	    public void cadastrar(Paciente paciente) throws PacienteJaCadastradoException {
 	    	// Verifica se o paciente existe no repositório
-	    	if (this.pacienteExiste(paciente.getCpf())) throw new PacienteJaCadastradoException();
+	    	if (this.Existe(paciente.getCpf())) throw new PacienteJaCadastradoException();
 			
 	    	paciente.setCodigo(this.id);
 			pacientes[this.indice] = paciente;
@@ -49,7 +49,7 @@ public class RepositorioPacienteArray implements IRepositorioPaciente{
 		* @return void
 		* @throws PacienteNaoEncontradoException 
 		*/
-	    public void removerPaciente(String cpf) throws PacienteNaoEncontradoException {
+	    public void remover(String cpf) throws PacienteNaoEncontradoException {
 	        int i = getIndice(cpf);
 	        if (i == -1) throw new PacienteNaoEncontradoException();
 	        pacientes[i] = pacientes[indice-1];
@@ -63,7 +63,7 @@ public class RepositorioPacienteArray implements IRepositorioPaciente{
 		* @return Paciente
 		* @throws PacienteNaoEncontradoException 
 		*/
-	    public Paciente procurarPaciente(String cpf) throws PacienteNaoEncontradoException {
+	    public Paciente procurar(String cpf) throws PacienteNaoEncontradoException {
 	    	Paciente cliente = null;
 	        int i = getIndice(cpf);
 	        if (i == -1) throw new PacienteNaoEncontradoException();
@@ -78,7 +78,7 @@ public class RepositorioPacienteArray implements IRepositorioPaciente{
 		* @return Paciente
 		* @throws PacienteNaoEncontradoException 
 		*/
-	    public void atualizarPaciente(Paciente paciente) throws PacienteNaoEncontradoException {
+	    public void atualizar(Paciente paciente) throws PacienteNaoEncontradoException {
 	        int i = getIndice(paciente.getCpf());
 	        if (i == -1) throw new PacienteNaoEncontradoException();
 	        pacientes[i] = paciente;
@@ -90,7 +90,7 @@ public class RepositorioPacienteArray implements IRepositorioPaciente{
 		* @return Boolean
 		* @throws  
 		*/
-	    public boolean pacienteExiste(String cpf) {
+	    public boolean Existe(String cpf) {
 	        boolean resposta;
 	            if (getIndice(cpf) >= 0) resposta = true;
 	            else resposta = false;
@@ -104,7 +104,7 @@ public class RepositorioPacienteArray implements IRepositorioPaciente{
 		* @return ArrayList<Paciente>
 		* @throws  
 		*/
-	    public ArrayList<Paciente> listarPaciente() { 
+	    public ArrayList<Paciente> listar() { 
 	    	ArrayList<Paciente> lista = new ArrayList<Paciente>();
 	    	for (int i = 0; i < indice; i = i + 1) {
 	            lista.add(pacientes[i]);
