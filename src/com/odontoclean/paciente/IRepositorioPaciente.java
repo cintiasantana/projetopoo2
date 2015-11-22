@@ -10,5 +10,5 @@ public interface IRepositorioPaciente {
 	public void removerPaciente(String cpf) throws PacienteNaoEncontradoException;
 	public Paciente procurarPaciente(String cpf) throws PacienteNaoEncontradoException;
 	public boolean pacienteExiste(String cpf);
-	public List<Paciente> listarPaciente();
+	public ArrayList<Paciente> listarPaciente();
 }

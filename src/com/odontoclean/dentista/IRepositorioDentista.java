@@ -14,5 +14,5 @@ public interface IRepositorioDentista {
 	public void removerDentista(String cpf) throws DentistaNaoEncontradoException, CPFInvalidoException, EnderecoNaoEncontradoException, CampoObritarorioInvalidoException;
 	public Dentista procurarDentista(String cpf) throws DentistaNaoEncontradoException;
 	public boolean dentistaExiste(String cpf);
-	public List<Dentista> listarDentista();
+	public ArrayList<Dentista> listarDentista();
 }

@@ -104,7 +104,7 @@ public class RepositorioPacienteArray implements IRepositorioPaciente{
 		* @return ArrayList<Paciente>
 		* @throws  
 		*/
-	    public List<Paciente> listarPaciente() { 
+	    public ArrayList<Paciente> listarPaciente() { 
 	    	ArrayList<Paciente> lista = new ArrayList<Paciente>();
 	    	for (int i = 0; i < indice; i = i + 1) {
 	            lista.add(pacientes[i]);

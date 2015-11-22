@@ -46,7 +46,7 @@ public class RepositorioPacienteArrayList implements IRepositorioPaciente {
 	}
 
 	@Override
-	public List<Paciente> listarPaciente() {
+	public ArrayList<Paciente> listarPaciente() {
 		// TODO Auto-generated method stub
 		return pacientes;
 	}
